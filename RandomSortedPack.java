@@ -26,7 +26,7 @@ public class RandomSortedPack {
     }
     
     private int[] ShufflePack(int CardList[],int ShuffledPack[]){
-        Calculator calc = new Calculator(2,'/',8);
+        Calculator calc = new Calculator();
         int RandomNumOfCard;
         int RandomNumOfCard2;
         int From0To35 = 0;

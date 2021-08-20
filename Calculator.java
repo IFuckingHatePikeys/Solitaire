@@ -8,10 +8,7 @@ public class Calculator {
     private double num2;
     private double value;
     
-    public Calculator(double numF,char operatorr,double numS) {
-        operation = operatorr;
-        num1 = numF;
-        num2 = numS;
+    public Calculator() {
     }
     public double getValue(){
         if(operation != '+' & operation != '-' & operation != '*' & operation != '/'){
