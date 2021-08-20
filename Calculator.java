@@ -10,14 +10,6 @@ public class Calculator {
     
     public Calculator() {
     }
-    public double getValue(){
-        if(operation != '+' & operation != '-' & operation != '*' & operation != '/'){
-            return(228.228);
-        }
-        else
-            return countUpValue();
-    }
-    
     public int getRandomNumFromA_ToB(int min,int max){
         return(min + (int)(Math.random() * (max-min+1)));
     }

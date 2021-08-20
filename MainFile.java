@@ -22,18 +22,6 @@ public class MainFile {
           }
           result = 1.0*count/net;
           System.out.println(result*100 + " Процента");
-        //Calculator calc = new Calculator(2,'/',8);
-       // System.out.println(calc.getValue());
-        
-     //   Me gleb = new Me();
-       // System.out.println(gleb.salutInterfase());
-
-       // Stack<Person> myStack = new Stack();
-      //  myStack.push(gleb);
-        
-      //  Person chel = (Person) myStack.pop();
-      //  System.out.println(chel.getFavoriteColorInterfase());
-        
     }
     
 }
