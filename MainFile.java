@@ -8,7 +8,7 @@ import java.util.Stack;
 
 
 public class MainFile {
-    public static final int net = 100000000;
+    public static final int net = 1000000;
         
     
     public static void main(String[] args) {        
@@ -21,7 +21,7 @@ public class MainFile {
               }
           }
           result = 1.0*count/net;
-          System.out.println(result*100 + " Процентов");
+          System.out.println(result*100 + " Процента");
         //Calculator calc = new Calculator(2,'/',8);
        // System.out.println(calc.getValue());
         
