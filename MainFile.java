@@ -7,7 +7,7 @@ import java.util.Stack;
 
 
 
-public class myProgrmm {
+public class MainFile {
     public static final int net = 100000000;
         
     
