@@ -1,51 +1,50 @@
 package myFirstPack;
 
-/**
- *
- * @author DarkLord
- */
 public class Patience {
-    boolean Successful;
-    RandomSortedPack RandomPack;
-    int[] pack;
+    private final int[] pack;
 
     public Patience() {
-        Successful = false;
-        RandomPack = new RandomSortedPack();
-        pack = RandomPack.GetRandomSortedPack();
+        pack = new RandomSortedPack().getRandomSortedPack();
     }
-    public boolean IsPatienceSuccessful(){
-        return(PlaySolitaire(pack));
-    }
-    private boolean PlaySolitaire(int [] PatiencePack){
-        int LastCard = PatiencePack[35];
-        boolean AnyMotion;
+    public boolean playSolitaireAndGetResult(){
+        boolean successful = false;
+        int lastCard = pack[35];
+        boolean anyMotion;
         int iDubler;
         int iDubler2;
         
         for(int i = 0;i<34;i++){
             iDubler = i;
             iDubler2 = i;
-            AnyMotion = false;
-            if(PatiencePack[1] == LastCard){
-                Successful = true;
+            anyMotion = false;
+            //if there are only 2 cards left, then they can no longer form a three, which means the sequence is winning
+            if(pack[1] == lastCard){
+                successful = true;
                 break;
             }
-            if((PatiencePack[i]/10) == (PatiencePack[i+2]/10) || (PatiencePack[i]%10) == (PatiencePack[i+2]%10)){
-                AnyMotion = true;
+            /*
+            if any of the threes has 2 outer cards of either the same
+             value or the same suit, the central card is shifted to the side
+             */
+            if((pack[i]/10) == (pack[i+2]/10) || (pack[i]%10) == (pack[i+2]%10)){
+                anyMotion = true;
                 for(int j = 0; j<(35-i);j++){
-                    PatiencePack[iDubler]=PatiencePack[iDubler+1];
+                    pack[iDubler]=pack[iDubler+1];
                     iDubler++;
                 }
                 i=-1;
             }
-            if(AnyMotion == false && PatiencePack[iDubler2+2]==LastCard){
+            /*
+             if we have reached the end of the laid out cards, and not a single combination has worked out for us,
+             then we exit the cycle, since this combination of cards is losing
+            */
+            if(!anyMotion && pack[iDubler2+2]==lastCard){
                 if(iDubler2+2 != 35){
-                    if(PatiencePack[iDubler2+3] == LastCard)
+                    if(pack[iDubler2+3] == lastCard)
                         break;
                 }                   
             }
         }
-        return(Successful);
+        return(successful);
     }
 }
