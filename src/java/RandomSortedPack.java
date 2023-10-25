@@ -1,5 +1,5 @@
 
-package myFirstPack;
+package myFirstPack.src.java;
 
 public class RandomSortedPack {
 

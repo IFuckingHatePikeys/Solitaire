@@ -1,4 +1,4 @@
-package myFirstPack;
+package myFirstPack.src.java;
 
 public class Patience {
     private final int[] pack;
